@@ -67,6 +67,7 @@
   .split .card h3 { margin-top: 0; }
   ul { margin: 0; padding-left: 1.2em; }
   .note { color: var(--muted); font-size: .88rem; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: .92em; background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 4px; }
 
   /* 使ってきたツール */
   .group { margin-top:18px; }
@@ -223,7 +224,7 @@
     <div class="story"><b>苦労①：動きの管理が複雑に</b>
       if-elseだけで作ると条件が絡み合いました。動きを状態ごとに分けてタグで分類すると、エラーが減り、コードも減りました。</div>
     <div class="story"><b>苦労②：処理落ちとフリーズ</b>
-      敵が増えると重くなり、フリーズしました。解放漏れと解放後の参照を整理して、フリーズは起きなくなりました。</div>
+      敵が増えると重くなり、フリーズしました。メモリリークのエラーを見て、<code>new</code> と <code>delete</code> をしている場所を見直しました。Object と Scene を親クラスにして、作ったものは Manager に登録し、最後の破棄も Manager がまとめて行う形にしました。子クラスに入っているものは、すべて消えます。この整理で、フリーズは起きなくなりました。</div>
     <div class="btns">
       <a class="btn main" href="docs/skybound-slayer.pdf">作品紹介シート（PDF）</a>
       <a class="btn" href="https://github.com/SoTanaka0409/SkyboundSlayer" target="_blank" rel="noopener">GitHub</a>
@@ -332,6 +333,7 @@
     </div>
   </div>
   <p class="note" style="margin-top:12px">AIは、改善点を出してもらう、自分では作ったことのない処理を作ってもらう、という使い方をしています。AIが作った部分は、仕組みを理解して説明できるようにすることが今後の課題です。</p>
+  <p class="note">エラーが繰り返し出るときや、初めてやることは、書き方を自分で学んだり、先生と一緒に探したりしています。先生に相談して、仕様ごとにコードをまとめて、読みやすくすることの大切さを知りました。</p>
 </section>
 
 <footer>
