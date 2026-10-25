@@ -68,6 +68,18 @@
   ul { margin: 0; padding-left: 1.2em; }
   .note { color: var(--muted); font-size: .88rem; }
 
+  /* 使ってきたツール */
+  .group { margin-top:18px; }
+    .group h3 { font-size:.95rem; margin:0 0 8px; color:var(--muted); letter-spacing:.06em; }
+    .tools { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px; }
+    .tool { display:flex; gap:12px; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+    .ico { flex:none; width:44px; height:44px; border-radius:11px; display:grid; place-items:center; color:#fff; font-weight:800; font-size:.95rem; letter-spacing:.02em; font-family:"Segoe UI","Yu Gothic",sans-serif; }
+    .tool b { display:block; font-size:1rem; line-height:1.3; }
+    .tool span.use { display:block; font-size:.82rem; color:var(--muted); line-height:1.5; margin-top:2px; }
+    .c1{background:#5b4fc4}.c2{background:#2f3a4a}.c3{background:#2a7f8e}.c4{background:#3a3fa8}
+    .c5{background:#2f6fb5}.c6{background:#c0612e}.c7{background:#2e7d4f}.c8{background:#8a4fa0}.c9{background:#b0453c}.c10{background:#58606b}
+  @media (max-width: 680px) { .tools { grid-template-columns: 1fr; } }
+
   footer { padding: 28px 0 40px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 20px; }
 
   @media (max-width: 680px) {
@@ -95,6 +107,7 @@
     <li><a href="#skybound">Skybound Slayer</a></li>
     <li><a href="#cow">牛キャッチャー</a></li>
     <li><a href="#spell">Spell Burst</a></li>
+    <li><a href="#tools">使ってきたツール</a></li>
     <li><a href="#skills">技術とAIの使い方</a></li>
   </ul>
 </nav>
@@ -214,6 +227,37 @@
       <a class="btn" href="https://drive.google.com/file/d/1AbreP61USAN1KIvSjyBcxZlFLl9wuJTz/view?usp=drive_link" target="_blank" rel="noopener">実行ファイル（ダウンロード）</a>
     </div>
   </article>
+</section>
+
+<section id="tools">
+  <h2>使ってきたツール</h2>
+  <p class="note">作品づくりや資料づくりで、実際に使ってきたものです。ロゴは使わず、自作のマークで表しています。</p>
+
+  <div class="group"><h3>開発</h3>
+  <div class="tools">
+    <div class="tool"><div class="ico c1">VS</div><div><b>Visual Studio</b><span class="use">C++開発のメイン環境。ビルド設定とデバッグ</span></div></div>
+    <div class="tool"><div class="ico c2">DX</div><div><b>DxLib</b><span class="use">C++のゲーム制作ライブラリ（3作品で使用）</span></div></div>
+    <div class="tool"><div class="ico c3">Ef</div><div><b>Effekseer</b><span class="use">3Dエフェクトの組み込み（Skybound・牛キャッチャー）</span></div></div>
+    <div class="tool"><div class="ico c4">Git</div><div><b>Git / GitHub</b><span class="use">バージョン管理。mainと作業用ブランチを分けて運用</span></div></div>
+    <div class="tool"><div class="ico c5">Un</div><div><b>Unity</b><span class="use">2Dのタップゲームを制作（C#）</span></div></div>
+  </div></div>
+
+  <div class="group"><h3>映像・画像・資料</h3>
+  <div class="tools">
+    <div class="tool"><div class="ico c6">Pr</div><div><b>Premiere Pro</b><span class="use">作品動画・自己紹介動画のカット編集、テロップ</span></div></div>
+    <div class="tool"><div class="ico c5">Ps</div><div><b>Photoshop</b><span class="use">画像素材の簡単な切り抜き、色や明るさの調整</span></div></div>
+    <div class="tool"><div class="ico c7">Of</div><div><b>Word / Excel / PowerPoint</b><span class="use">資料づくり、表計算（牛キャッチャーの日々の作業管理）</span></div></div>
+  </div></div>
+
+  <div class="group"><h3>AI</h3>
+  <div class="tools">
+    <div class="tool"><div class="ico c8">Cl</div><div><b>Claude / Claude Code</b><span class="use">改善点の相談、コードの添削、資料づくり</span></div></div>
+    <div class="tool"><div class="ico c9">AG</div><div><b>Antigravity</b><span class="use">AI開発ツール。過去作の改良</span></div></div>
+    <div class="tool"><div class="ico c10">Ge</div><div><b>Gemini</b><span class="use">開発の効率化、コード生成の補助</span></div></div>
+    <div class="tool"><div class="ico c10">Ch</div><div><b>ChatGPT</b><span class="use">開発の効率化、コード生成の補助</span></div></div>
+  </div></div>
+
+  <p class="note" style="margin-top:14px">マークはデザインで、各ツールの公式ロゴではありません。製品名は、各社の商標です。</p>
 </section>
 
 <section id="skills">
