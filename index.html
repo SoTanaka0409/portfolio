@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>田中 壮 ポートフォリオ</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #222; --muted: #666; --line: #dcdfe4;
+    --accent: #2a5d9f; --accent-soft: #e8f0fa; --ai: #8a8f98; --ai-soft: #f0f1f3;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.8;
+    font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+  nav ul { list-style: none; margin: 0 auto; padding: 0 16px; max-width: 920px; display: flex; gap: 20px; overflow-x: auto; }
+  nav a { display: block; padding: 14px 0; color: var(--text); text-decoration: none; font-size: .9rem; white-space: nowrap; }
+  nav a:hover { color: var(--accent); }
+
+  header { padding: 40px 0 24px; }
+  header .role { color: var(--accent); font-weight: bold; font-size: .95rem; margin: 0 0 4px; }
+  header h1 { margin: 0 0 8px; font-size: 2rem; letter-spacing: .04em; }
+  header .lead { margin: 0; font-size: 1.05rem; }
+  header .meta { margin: 8px 0 0; color: var(--muted); font-size: .9rem; }
+
+  section { padding: 28px 0; }
+  h2 { font-size: 1.35rem; margin: 0 0 14px; padding-left: 10px; border-left: 5px solid var(--accent); }
+  h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+  p { margin: 0 0 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+
+  table { border-collapse: collapse; width: 100%; background: var(--card); font-size: .92rem; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f1f3f6; white-space: nowrap; }
+  .table-scroll { overflow-x: auto; }
+  td a { font-weight: bold; }
+
+  .video { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video.small { max-width: 640px; }
+
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+  .btn { display: inline-block; padding: 10px 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff;
+    color: var(--text); text-decoration: none; font-size: .92rem; font-weight: bold; }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.main { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.main:hover { opacity: .9; color: #fff; }
+
+  .work { margin-bottom: 28px; }
+  .work header { padding: 0 0 8px; }
+  .work h3.name { font-size: 1.3rem; margin: 0; }
+  .badges { margin: 6px 0 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge { font-size: .8rem; padding: 2px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+  .badge.ai { background: var(--ai-soft); color: #555; }
+  .thumb { width: 100%; border-radius: 8px; border: 1px solid var(--line); display: block; margin-bottom: 14px; }
+  dl { margin: 0; display: grid; grid-template-columns: 7.5em 1fr; gap: 8px 12px; font-size: .95rem; }
+  dt { font-weight: bold; color: var(--muted); }
+  dd { margin: 0; }
+  .story { background: var(--accent-soft); border-radius: 8px; padding: 12px 14px; margin-top: 12px; font-size: .95rem; }
+  .story b { display: block; margin-bottom: 2px; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .split .card h3 { margin-top: 0; }
+  ul { margin: 0; padding-left: 1.2em; }
+  .note { color: var(--muted); font-size: .88rem; }
+
+  footer { padding: 28px 0 40px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 20px; }
+
+  @media (max-width: 680px) {
+    table.overview, table.overview tbody { display: block; }
+    table.overview tr:first-child { display: none; }
+    table.overview tr { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 12px; padding: 10px 12px; }
+    table.overview td { display: block; border: 0; padding: 4px 0; }
+    table.overview td::before { content: attr(data-label); display: block; font-size: .78rem; color: var(--muted); }
+    .table-scroll { overflow: visible; }
+    header h1 { font-size: 1.6rem; }
+    .split { grid-template-columns: 1fr; }
+    dl { grid-template-columns: 1fr; gap: 2px; }
+    dt { margin-top: 8px; }
+    .btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#top">トップ</a></li>
+    <li><a href="#overview">作品一覧</a></li>
+    <li><a href="#about">自己紹介</a></li>
+    <li><a href="#skybound">Skybound Slayer</a></li>
+    <li><a href="#cow">牛キャッチャー</a></li>
+    <li><a href="#spell">Spell Burst</a></li>
+    <li><a href="#skills">技術とAIの使い方</a></li>
+  </ul>
+</nav>
+
+<div class="wrap" id="top">
+
+<header>
+  <p class="role">志望：システムエンジニア ／ アプリ開発 ／ Web系エンジニア</p>
+  <h1>田中 壮</h1>
+  <p class="lead">作る前に構造を考え、困ったら原因を調べて直す。ゲーム制作で身につけた姿勢を、日常を便利にするシステム開発に活かしたいと考えています。</p>
+  <p class="meta">東京情報クリエイター工学院専門学校</p>
+</header>
+
+<section id="overview">
+  <h2>作品一覧（3作品）</h2>
+  <div class="table-scroll">
+  <table class="overview">
+    <tr><th>作品</th><th>体制・期間</th><th>私の役割</th><th>技術</th><th>ここを見てください</th></tr>
+    <tr><td data-label="作品"><a href="#skybound">Skybound Slayer</a><br><span class="note">3DアクションRPG</span></td>
+      <td data-label="体制・期間">個人／1〜2か月</td>
+      <td data-label="私の役割">企画・設計・実装すべて</td>
+      <td data-label="技術">C++ / DxLib / Effekseer</td>
+      <td data-label="ここを見てください">状態管理の作り直し、メモリリークの調査と対策</td>
+    </tr>
+    <tr><td data-label="作品"><a href="#cow">も〜たまらん 爽快牛キャッチャー</a><br><span class="note">3Dアクション</span></td>
+      <td data-label="体制・期間">5人（学校の課題）／2か月</td>
+      <td data-label="私の役割">チームリーダー、メインプログラマー</td>
+      <td data-label="技術">C++17 / DxLib / Effekseer</td>
+      <td data-label="ここを見てください">時間不足のなかで、タスクを絞り、チームをまとめた経験</td>
+    </tr>
+    <tr><td data-label="作品"><a href="#spell">Spell Burst</a><br><span class="note">弾幕アクション</span></td>
+      <td data-label="体制・期間">個人／1か月</td>
+      <td data-label="私の役割">仕様設計（ボスなどはAIが作成）</td>
+      <td data-label="技術">C++ / DxLib</td>
+      <td data-label="ここを見てください">AIの使い方を学ぶために作った作品。AIに任せる範囲を決めて使った点</td>
+    </tr>
+  </table>
+  </div>
+</section>
+
+<section id="about">
+  <h2>自己紹介</h2>
+  <div class="card">
+    <div class="video small">
+      <iframe src="https://www.youtube.com/embed/O4yonUQ8HSQ" title="自己紹介動画" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="note" style="margin:-4px 0 12px"><a href="https://youtu.be/O4yonUQ8HSQ" target="_blank" rel="noopener">動画が表示されないときは、YouTubeで開く</a></p>
+    <p>ゲーム制作を通してプログラミングを学ぶうちに、ゲームだけでなく、日常を便利にするツールを作ることにも興味を持つようになりました。いまは、ゲーム制作用のプロンプトと、自分専用の就職サポートツールを、AIを使って作っています。</p>
+    <div class="btns"><a class="btn main" href="docs/self-introduction.pdf">自己紹介シート（PDF・2ページ）</a></div>
+  </div>
+</section>
+
+<section id="works">
+  <h2>作品</h2>
+
+  <!-- Skybound -->
+  <article class="card work" id="skybound">
+    <header><h3 class="name">Skybound Slayer</h3></header>
+    <div class="badges"><span class="badge">個人制作</span><span class="badge">1〜2か月</span><span class="badge">C++ / DxLib / Effekseer</span></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/drcom4Y--8A" title="Skybound Slayer プレイ動画" allowfullscreen loading="lazy"></iframe></div>
+    <p class="note" style="margin:-4px 0 12px"><a href="https://youtu.be/drcom4Y--8A" target="_blank" rel="noopener">動画が表示されないときは、YouTubeで開く</a></p>
+    <dl>
+      <dt>どんなゲーム</dt><dd>敵を倒して資金を集め、キャラクターを強化して、ボスに挑む3DアクションRPG。</dd>
+      <dt>作った理由</dt><dd>就職活動用に、自分の基礎力を見せられる作品を作りたかったため。</dd>
+      <dt>担当</dt><dd>企画、設計、実装（当たり判定、ステート管理、メモリ管理）。修正点は先生とAIに相談。</dd>
+    </dl>
+    <div class="story"><b>苦労①：動きの管理が複雑に</b>
+      if-elseだけで作ると条件が絡み合いました。動きを状態ごとに分けてタグで分類すると、エラーが減り、コードも減りました。</div>
+    <div class="story"><b>苦労②：処理落ちとフリーズ</b>
+      敵が増えると重くなり、フリーズしました。解放漏れと解放後の参照を整理して、フリーズは起きなくなりました。</div>
+    <div class="btns">
+      <a class="btn main" href="docs/skybound-slayer.pdf">作品紹介シート（PDF）</a>
+      <a class="btn" href="https://github.com/SoTanaka0409/SkyboundSlayer" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="docs/skybound-controls.png">操作方法</a>
+      <a class="btn" href="https://drive.google.com/file/d/17Y43Av8PbPoZdVAjNjBI1cKXqjck1DFw/view?usp=drive_link" target="_blank" rel="noopener">実行ファイル（ダウンロード）</a>
+    </div>
+  </article>
+
+  <!-- Cow -->
+  <article class="card work" id="cow">
+    <header><h3 class="name">も〜たまらん 爽快牛キャッチャー</h3></header>
+    <div class="badges"><span class="badge">チーム制作（5人）</span><span class="badge">2か月</span><span class="badge">リーダー</span><span class="badge">C++17 / DxLib / Effekseer</span></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/uxer9cb2ACU" title="も〜たまらん 爽快牛キャッチャー プレイ動画" allowfullscreen loading="lazy"></iframe></div>
+    <p class="note" style="margin:-4px 0 12px"><a href="https://youtu.be/uxer9cb2ACU" target="_blank" rel="noopener">動画が表示されないときは、YouTubeで開く</a></p>
+    <dl>
+      <dt>どんなゲーム</dt><dd>UFOで牛をビームで捕まえて、ハイスコアを目指す3Dアクション。学校の課題として、同じ学校の4人と制作。</dd>
+      <dt>担当</dt><dd>チームリーダー、メインプログラマー。共通基盤（シーン管理・オブジェクト管理）、当たり判定の基盤、牛のAI。友人が当たり判定の調整と牛のAIの一部を担当。</dd>
+    </dl>
+    <div class="story"><b>苦労：時間が足りなくなった</b>
+      見積もりが甘く、仕様変更も多い状況でした。タスクを絞り、意見は期限を確認して納得してもらい、Excelで毎日の作業をまとめて、納期内に提出しました。</div>
+    <div class="btns">
+      <a class="btn main" href="docs/cow-catcher.pdf">作品紹介シート（PDF）</a>
+      <a class="btn" href="https://github.com/SoTanaka0409/cow" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="docs/cow-catcher-controls.pdf">操作方法</a>
+      <a class="btn" href="https://drive.google.com/file/d/1ymFtqR62LCPpluy0VZzRwzJycI8D7Wvm/view?usp=drive_link" target="_blank" rel="noopener">実行ファイル（ダウンロード）</a>
+    </div>
+  </article>
+
+  <!-- Spell Burst -->
+  <article class="card work" id="spell">
+    <header><h3 class="name">Spell Burst</h3></header>
+    <div class="badges"><span class="badge">個人制作</span><span class="badge">1か月</span><span class="badge">C++ / DxLib</span><span class="badge ai">AI活用を学ぶための作品</span></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/CJIUZUEZCmA" title="Spell Burst プレイ動画" allowfullscreen loading="lazy"></iframe></div>
+    <p class="note" style="margin:-4px 0 12px"><a href="https://youtu.be/CJIUZUEZCmA" target="_blank" rel="noopener">動画が表示されないときは、YouTubeで開く</a></p>
+    <dl>
+      <dt>どんなゲーム</dt><dd>低速移動で弾の隙間をすり抜ける、弾幕アクション。機体は3タイプ、難易度は3段階。</dd>
+      <dt>作った理由</dt><dd>AIの上手な使い方を学ぶため。Skybound Slayer のあとに制作。</dd>
+      <dt>自分で作成</dt><dd>ゲームの仕様（機体、必殺技、難易度、オート連射、低速移動、流れ）。</dd>
+      <dt>AIが作成</dt><dd>ボスの行動管理、弾の軌道計算、バリア、色相の処理、イラスト、音楽、コードのコメント。AIが作ったボスのコードは、仕組みをまだ十分に読めておらず、今後の課題です。</dd>
+    </dl>
+    <div class="story"><b>AIの使い方</b>
+      「動いている部分には触らない」というルールを決め、コードの添削や、自分で作ったことのない処理を任せました。</div>
+    <div class="btns">
+      <a class="btn main" href="docs/spell-burst.pdf">作品紹介シート（PDF）</a>
+      <a class="btn" href="https://github.com/SoTanaka0409/Spell-Burst" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="docs/spell-burst-controls.pdf">操作方法</a>
+      <a class="btn" href="https://drive.google.com/file/d/1AbreP61USAN1KIvSjyBcxZlFLl9wuJTz/view?usp=drive_link" target="_blank" rel="noopener">実行ファイル（ダウンロード）</a>
+    </div>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>技術とAIの使い方</h2>
+  <div class="split">
+    <div class="card">
+      <h3>自分で書いたもの</h3>
+      <ul>
+        <li>C / C++（DxLib、Effekseerを使った3Dゲーム制作）</li>
+        <li>C#（授業での制作と、2Dゲーム）</li>
+        <li>CSVへのデータの追加</li>
+        <li>Git / GitHub（mainと作業用ブランチを分けて管理）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>AIを使って作ったもの</h3>
+      <ul>
+        <li>Python、Web技術（PHP・SQL・JavaScript・HTML/CSS）</li>
+        <li>各作品の画像・音楽</li>
+        <li>Spell Burst のボスの動き、弾の軌道、バリア</li>
+        <li>CSVとタスク管理表の基本の形（そのあと、必要な情報を自分で追加）</li>
+        <li>ゲーム制作用プロンプト、自分専用の就職サポートツール</li>
+        <li>ゲームのコードの添削（改善点の指摘）</li>
+        <li>ソースコードのコメント（Doxygen形式）</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note" style="margin-top:12px">AIは、改善点を出してもらう、自分では作ったことのない処理を作ってもらう、という使い方をしています。AIが作った部分は、仕組みを理解して説明できるようにすることが今後の課題です。</p>
+</section>
+
+<footer>
+  <p>© 田中 壮　／　<a href="https://github.com/SoTanaka0409" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+</div>
+</body>
+</html>
